@@ -25,9 +25,9 @@ namespace Store.DAL.Services.WebServices
             _categoryRepository = categoryRepository;
         }
 
-        public async Task<Acknowledgement<JsonResultPaging<List<CategoryResponeModel>>>> GetTenantList()
+        public async Task<Acknowledgement<JsonResultPaging<List<CategoryResponseModel>>>> GetTenantList()
         {
-            var response = new Acknowledgement<JsonResultPaging<List<CategoryResponeModel>>>();
+            var response = new Acknowledgement<JsonResultPaging<List<CategoryResponseModel>>>();
             try
             {
                 var predicate = PredicateBuilder.New<Category>(true);
@@ -35,8 +35,8 @@ namespace Store.DAL.Services.WebServices
                    new PagingParameters(1, 100),
                    predicate
                    );
-                var data = _mapper.Map<List<CategoryResponeModel>>(tennantDbList.Data);
-                response.Data = new JsonResultPaging<List<CategoryResponeModel>>()
+                var data = _mapper.Map<List<CategoryResponseModel>>(tennantDbList.Data);
+                response.Data = new JsonResultPaging<List<CategoryResponseModel>>()
                 {
                     Data = data,
                     PageNumber = 1,

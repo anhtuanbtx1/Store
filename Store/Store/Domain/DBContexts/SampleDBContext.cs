@@ -42,5 +42,6 @@ namespace Store.Domain.DBContexts
             
         }
         public virtual DbSet<Category> Categorys { get; set; }
+        public virtual DbSet<News> News { get; set; }
     }
 }

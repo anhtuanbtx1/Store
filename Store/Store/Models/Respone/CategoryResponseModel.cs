@@ -2,7 +2,7 @@
 
 namespace Store.Models.Respone
 {
-    public class CategoryResponeModel : BaseAuditableEntity
+    public class CategoryResponseModel : BaseAuditableEntity
     {
         public int category_id { get; set; }
         public string category_type { get; set; }

@@ -9,13 +9,11 @@ namespace Store.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ILogger<CategoryController> _logger;
-        private readonly ICategoryRepository _categoryRepository;
         private readonly ICategoryService _categoryService;
         public CategoryController(
-          ILogger<CategoryController> logger, ICategoryRepository categoryRepository, ICategoryService categoryService) 
+          ILogger<CategoryController> logger, ICategoryService categoryService) 
         {
             _logger = logger;
-            _categoryRepository = categoryRepository;
             _categoryService = categoryService;
         }
       

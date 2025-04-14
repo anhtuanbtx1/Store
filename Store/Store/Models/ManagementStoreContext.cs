@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Store.Domain.Entity;
 
 namespace Store.Models;
 
@@ -16,6 +17,8 @@ public partial class ManagementStoreContext : DbContext
     }
 
     public virtual DbSet<Category> Categories { get; set; }
+
+    public virtual DbSet<News> News { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -39,6 +42,31 @@ public partial class ManagementStoreContext : DbContext
             entity.Property(e => e.CategoryType)
                 .HasMaxLength(255)
                 .HasColumnName("category_type");
+        });
+
+        modelBuilder.Entity<News>(entity =>
+        {
+            entity.HasKey(e => e.NewsId).HasName("PK__News__4C27CCD8FF97DB3A");
+
+            entity.Property(e => e.NewsId).HasColumnName("news_id");
+            entity.Property(e => e.CreatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_date");
+            entity.Property(e => e.NewsDetailContent).HasColumnName("news_detail_content");
+            entity.Property(e => e.NewsShortContent)
+                .HasMaxLength(255)
+                .HasColumnName("news_short_content");
+            entity.Property(e => e.NewsThumbnail)
+                .HasMaxLength(255)
+                .HasColumnName("news_thumbnail");
+            entity.Property(e => e.State)
+                .HasDefaultValue(false)
+                .HasColumnName("state");
+            entity.Property(e => e.UpdatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_date");
         });
 
         OnModelCreatingPartial(modelBuilder);

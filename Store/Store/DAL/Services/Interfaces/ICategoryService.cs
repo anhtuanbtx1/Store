@@ -6,6 +6,6 @@ namespace Store.DAL.Services.Interfaces
     public interface ICategoryService : IBaseService, IDisposable
     {
 
-        Task<Acknowledgement<JsonResultPaging<List<CategoryResponeModel>>>> GetTenantList();
+        Task<Acknowledgement<JsonResultPaging<List<CategoryResponseModel>>>> GetTenantList();
     }
 }

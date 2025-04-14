@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Store.DAL.Interfaces;
 
 namespace Store.Controllers
 {

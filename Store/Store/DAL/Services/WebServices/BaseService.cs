@@ -1,4 +1,5 @@
-﻿using Store.Domain.DBContexts;
+﻿
+using Store.Domain.Entity;
 using System.Security.Claims;
 
 namespace Store.DAL.Services.WebServices
@@ -22,15 +23,15 @@ namespace Store.DAL.Services.WebServices
             _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
 
         }
-        private SampleDBContext _DbContext;
-        public SampleDBContext DbContext
+        private ManagementStoreContext _DbContext;
+        public ManagementStoreContext DbContext
         {
             get
             {
 
                 if (_DbContext == null)
                 {
-                    _DbContext = new SampleDBContext();
+                    _DbContext = new ManagementStoreContext();
                 }
                 return _DbContext;
             }

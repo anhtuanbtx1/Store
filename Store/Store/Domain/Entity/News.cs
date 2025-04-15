@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Store.Domain.Entity;
 
-public class News
+public partial class News
 {
-    [Key]
-    public int news_id { get; set; }
+    public int NewsId { get; set; }
 
-    public string? news_thumbnail { get; set; }
+    public string? NewsThumbnail { get; set; }
 
-    public string? news_short_content { get; set; }
+    public string? NewsShortContent { get; set; }
 
-    public string? news_detail_content { get; set; }
+    public string? NewsDetailContent { get; set; }
 
-    public DateTime? created_date { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
-    public DateTime? updated_date { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
-    public bool? state { get; set; }
+    public bool? State { get; set; }
 }

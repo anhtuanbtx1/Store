@@ -47,10 +47,7 @@ namespace Store.DAL.Repository
             throw new NotImplementedException();
         }
 
-        internal async Task GetWithPagingAsync(PagingParameters pagingParameters, ExpressionStarter<Category> predicate, Func<IQueryable<Category>, IOrderedQueryable<Category>> value)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

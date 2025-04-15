@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Store.Domain.Entity;
 
-namespace Store.Models;
+namespace Store.Domain.Entity;
 
 public partial class ManagementStoreContext : DbContext
 {
@@ -19,6 +18,8 @@ public partial class ManagementStoreContext : DbContext
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<News> News { get; set; }
+
+    public virtual DbSet<Product> Products { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -67,6 +68,48 @@ public partial class ManagementStoreContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("updated_date");
+        });
+
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.ProductId).HasName("PK__Product__47027DF5E4FDE734");
+
+            entity.ToTable("Product");
+
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.ProductColor)
+                .HasMaxLength(255)
+                .HasColumnName("product_color");
+            entity.Property(e => e.ProductDetail).HasColumnName("product_detail");
+            entity.Property(e => e.ProductImage)
+                .HasMaxLength(255)
+                .HasColumnName("product_image");
+            entity.Property(e => e.ProductName)
+                .HasMaxLength(100)
+                .HasColumnName("product_name");
+            entity.Property(e => e.ProductPrice)
+                .HasMaxLength(255)
+                .HasColumnName("product_price");
+            entity.Property(e => e.ProductPriceSale)
+                .HasMaxLength(255)
+                .HasColumnName("product_price_sale");
+            entity.Property(e => e.ProductSeries)
+                .HasMaxLength(255)
+                .HasColumnName("product_series");
+            entity.Property(e => e.ProductSpace)
+                .HasMaxLength(255)
+                .HasColumnName("product_space");
+            entity.Property(e => e.ProductStatus)
+                .HasMaxLength(255)
+                .HasColumnName("product_status");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
         });
 
         OnModelCreatingPartial(modelBuilder);

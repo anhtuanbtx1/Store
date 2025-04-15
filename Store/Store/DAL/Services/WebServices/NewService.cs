@@ -7,6 +7,7 @@ using Store.DAL.Services.Interfaces;
 using Store.Domain.Entity;
 using Store.Models.Respone;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Reflection.Emit;
 
 namespace Store.DAL.Services.WebServices
@@ -27,12 +28,12 @@ namespace Store.DAL.Services.WebServices
             _newRepository = newRepository;
         }
 
-        public async Task<Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>> GetTenantList()
+        public async Task<Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>> GetNewsList()
         {
             var response = new Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>();
             try
             {
-                var predicate = PredicateBuilder.New<News>(true);
+                var predicate = PredicateBuilder.New<News>(i => i.State == true);
                 var tennantDbList = await _newRepository.ReadOnlyRespository.GetWithPagingAsync(
                    new PagingParameters(1, 100),
                    predicate
@@ -56,13 +57,37 @@ namespace Store.DAL.Services.WebServices
             }
         }
 
+        public async Task<Acknowledgement<NewReponseModel>> GetUserById(int newId)
+        {
+            var ack = new Acknowledgement<NewReponseModel>();
+            try
+            {
+                var user = await _newRepository.ReadOnlyRespository.FindAsync(newId);
+                if (user == null)
+                {
+                    ack.IsSuccess = false;
+                    ack.AddMessages("Không tìm thấy user");
+                    return ack;
+                }
 
-    
+                ack.Data = _mapper.Map<NewReponseModel>(user);
+                ack.IsSuccess = true;
+
+                return ack;
+
+            }
+            catch (Exception ex)
+            {
+                ack.ExtractMessage(ex);
+                _logger.LogError("GetUserList " + ex.Message);
+                return ack;
+            }
+        }
 
         public async Task<Acknowledgement> Update(NewsResponseModel postData)
         {
             var ack = new Acknowledgement();
-            var existItem = await _newRepository.Repository.FirstOrDefaultAsync(i => i.news_id == postData.newsId);
+            var existItem = await _newRepository.Repository.FirstOrDefaultAsync(i => i.NewsId == postData.newsId);
             if (existItem == null)
             {
                 ack.AddMessage("Không tìm thấy người dùng");
@@ -71,8 +96,10 @@ namespace Store.DAL.Services.WebServices
             }
             else
             {
-                existItem.state = postData.state;
-                existItem.news_thumbnail = postData.newsThumbnail;
+                existItem.State = postData.state;
+                //existItem.news_thumbnail = postData.newsThumbnail;
+                //existItem.news_detail_content = postData.newsDetailContent;
+
                 await ack.TrySaveChangesAsync(res => res.UpdateAsync(existItem), _newRepository.Repository);
             }
 

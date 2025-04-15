@@ -1,17 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Store.Domain.Entity
+namespace Store.Domain.Entity;
+
+public partial class Category
 {
-    public class Category
-    {
-        [Key]
-        public int category_id { get; set; }
+    public int CategoryId { get; set; }
 
-        public string? category_type { get; set; }
+    public string? CategoryType { get; set; }
 
-        public string? category_code { get; set; }
+    public string? CategoryCode { get; set; }
 
-        public string? category_name { get; set; }
-    }
+    public string? CategoryName { get; set; }
 }

@@ -8,13 +8,17 @@ namespace Store.Models.Respone
 
         public string ProductName { get; set; } = null!;
 
-        public string? ProductStatus { get; set; }
+        public string? ProductStatusCode { get; set; }
+        public string? ProductStatusName { get; set; }
 
-        public string? ProductSpace { get; set; }
+        public string? ProductSpaceCode { get; set; }
+        public string? ProductSpaceName { get; set; }
 
-        public string? ProductSeries { get; set; }
+        public string? ProductSeriesCode { get; set; }
+        public string? ProductSeriesName { get; set; }
 
-        public string? ProductColor { get; set; }
+        public string? ProductColorCode { get; set; }
+        public string? ProductColorName { get; set; }
 
         public string? ProductPrice { get; set; }
 

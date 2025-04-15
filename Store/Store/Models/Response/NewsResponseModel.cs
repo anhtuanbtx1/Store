@@ -12,7 +12,7 @@ namespace Store.Models.Respone
         public bool state { get; set; }
     }
 
-    public class NewReponseModel
+    public class NewResponseModel
     {
         public int newsId { get; set; }
         public string newsThumbnail { get; set; }

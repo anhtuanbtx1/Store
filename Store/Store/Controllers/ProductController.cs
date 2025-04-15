@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Store.Common.BaseModels;
 using Store.DAL.Services.Interfaces;
+using Store.DAL.Services.WebServices;
+using Store.Models.Request;
+using Store.Models.Respone;
 
 namespace Store.Controllers
 {
@@ -22,6 +26,19 @@ namespace Store.Controllers
         {
             var result = await _productService.GetProductList();
             return Ok(result);
+        }
+
+        [HttpPost("CreateOrUpdate", Name = "CreateOrUpdate")]
+        public async Task<Acknowledgement> CreateOrUpdate([FromBody] ProductRequestModel postData)
+        {
+            return await _productService.CreateOrUpdate(postData);
+        }
+
+        [HttpGet("FindById")]
+        public async Task<Acknowledgement<ProductResponseModel>> GetById(int productId)
+        {
+            var ack = await _productService.GetById(productId);
+            return ack;
         }
     }
 }

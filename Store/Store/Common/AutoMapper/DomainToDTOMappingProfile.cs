@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Store.Domain.Entity;
+using Store.Models.Request;
 using Store.Models.Respone;
 
 namespace Store.Common.AutoMapper
@@ -12,11 +13,13 @@ namespace Store.Common.AutoMapper
             CreateMap<CategoryResponseModel, Category>();
 
             CreateMap<News, NewsResponseModel>();
-            CreateMap<NewReponseModel, News>();
-            CreateMap<News, NewReponseModel>();
+            CreateMap<NewResponseModel, News>();
+            CreateMap<News, NewResponseModel>();
 
             CreateMap<ProductResponseModel, Product>();
             CreateMap<Product, ProductResponseModel>();
+            CreateMap<ProductRequestModel, Product>();
+
 
         }
     }

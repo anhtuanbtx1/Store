@@ -8,7 +8,7 @@ namespace Store.DAL.Services.Interfaces
     {
         Task<Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>> GetNewsList();
         Task<Acknowledgement> Update(NewsResponseModel postData);
-        Task<Acknowledgement<NewReponseModel>> GetUserById(int newId);
+        Task<Acknowledgement<NewResponseModel>> GetUserById(int newId);
 
     }
 }

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Store.Domain.Entity;
 
-namespace Store.Domain.Entity;
+namespace Store.Models;
 
 public partial class ManagementStoreContext : DbContext
 {

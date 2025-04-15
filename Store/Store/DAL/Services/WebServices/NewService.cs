@@ -57,9 +57,9 @@ namespace Store.DAL.Services.WebServices
             }
         }
 
-        public async Task<Acknowledgement<NewReponseModel>> GetUserById(int newId)
+        public async Task<Acknowledgement<NewResponseModel>> GetUserById(int newId)
         {
-            var ack = new Acknowledgement<NewReponseModel>();
+            var ack = new Acknowledgement<NewResponseModel>();
             try
             {
                 var user = await _newRepository.ReadOnlyRespository.FindAsync(newId);
@@ -70,7 +70,7 @@ namespace Store.DAL.Services.WebServices
                     return ack;
                 }
 
-                ack.Data = _mapper.Map<NewReponseModel>(user);
+                ack.Data = _mapper.Map<NewResponseModel>(user);
                 ack.IsSuccess = true;
 
                 return ack;

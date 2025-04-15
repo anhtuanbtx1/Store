@@ -34,10 +34,12 @@ namespace Store.Controllers
         }
 
         [HttpGet("FindById")]
-        public async Task<Acknowledgement<NewReponseModel>> GetUserById(int newId)
+        public async Task<Acknowledgement<NewResponseModel>> GetUserById(int newId)
         {
             var ack = await _newService.GetUserById(newId);
             return ack;
         }
+
+
     }
 }

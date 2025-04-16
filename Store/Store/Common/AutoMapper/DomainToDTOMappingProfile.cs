@@ -2,6 +2,7 @@
 using Store.Domain.Entity;
 using Store.Models.Request;
 using Store.Models.Respone;
+using Store.Models.Response;
 
 namespace Store.Common.AutoMapper
 {
@@ -20,7 +21,7 @@ namespace Store.Common.AutoMapper
             CreateMap<Product, ProductResponseModel>();
             CreateMap<ProductRequestModel, Product>();
 
-
+            CreateMap<Banner, BannerResponseModel>();
         }
     }
 }

@@ -41,5 +41,6 @@ namespace Store.Controllers
             var ack = await _productService.GetById(productId);
             return ack;
         }
+
     }
 }

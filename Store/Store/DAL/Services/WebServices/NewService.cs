@@ -97,9 +97,11 @@ namespace Store.DAL.Services.WebServices
             else
             {
                 existItem.State = postData.state;
-                //existItem.news_thumbnail = postData.newsThumbnail;
-                //existItem.news_detail_content = postData.newsDetailContent;
-
+                existItem.NewsThumbnail = postData.newsThumbnail;
+                existItem.NewsDetailContent = postData.newsDetailContent;
+                existItem.UpdatedAt = DateTime.Now;
+                existItem.NewsShortContent = postData.newsShortContent;
+             
                 await ack.TrySaveChangesAsync(res => res.UpdateAsync(existItem), _newRepository.Repository);
             }
 

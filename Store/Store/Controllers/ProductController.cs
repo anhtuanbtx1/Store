@@ -4,6 +4,7 @@ using Store.DAL.Services.Interfaces;
 using Store.DAL.Services.WebServices;
 using Store.Models.Request;
 using Store.Models.Respone;
+using Store.Models.Search;
 
 namespace Store.Controllers
 {
@@ -22,9 +23,9 @@ namespace Store.Controllers
 
 
         [HttpGet("GetProductList", Name = "GetProductList")]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] ProductSearchModel searchModel)
         {
-            var result = await _productService.GetProductList();
+            var result = await _productService.GetProductList(searchModel);
             return Ok(result);
         }
 

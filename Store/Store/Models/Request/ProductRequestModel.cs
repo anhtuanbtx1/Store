@@ -2,32 +2,32 @@
 {
     public class ProductRequestModel
     {
-        public int ProductId { get; set; }
+        public int productId { get; set; }
 
-        public string ProductName { get; set; } = null!;
+        public string productName { get; set; } = null!;
 
-        public string? ProductStatusCode { get; set; }
+        public string? productStatusCode { get; set; }
 
-        public string? ProductStatusName { get; set; }
+        public string? productStatusName { get; set; }
 
-        public string? ProductSpaceCode { get; set; }
+        public string? productSpaceCode { get; set; }
 
-        public string? ProductSpaceName { get; set; }
+        public string? productSpaceName { get; set; }
 
-        public string? ProductSeriesCode { get; set; }
+        public string? productSeriesCode { get; set; }
 
-        public string? ProductSeriesName { get; set; }
+        public string? productSeriesName { get; set; }
 
-        public string? ProductColorCode { get; set; }
+        public string? productColorCode { get; set; }
 
-        public string? ProductColorName { get; set; }
+        public string? productColorName { get; set; }
 
-        public string? ProductPrice { get; set; }
+        public string? productPrice { get; set; }
 
-        public string? ProductPriceSale { get; set; }
+        public string? productPriceSale { get; set; }
 
-        public string? ProductImage { get; set; }
+        public List<string>? listImage { get; set; }
 
-        public string? ProductDetail { get; set; }
+        public string? productDetail { get; set; }
     }
 }

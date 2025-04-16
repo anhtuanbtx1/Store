@@ -13,9 +13,9 @@ public partial class News
 
     public string? NewsDetailContent { get; set; }
 
-    public DateTime? CreatedDate { get; set; }
+    public DateTime? CreatedAt { get; set; }
 
-    public DateTime? UpdatedDate { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     public bool? State { get; set; }
 }

@@ -41,10 +41,10 @@ namespace Store.DAL.Services.WebServices
                 var data = _mapper.Map<List<NewsResponseModel>>(tennantDbList.Data);
                 response.Data = new JsonResultPaging<List<NewsResponseModel>>()
                 {
-                    Data = data,
-                    PageNumber = 1,
-                    PageSize = 10,
-                    Total = 10
+                    data = data,
+                    pageNumber = 1,
+                    pageSize = 10,
+                    total = 10
                 };
                 response.IsSuccess = true;
                 return response;

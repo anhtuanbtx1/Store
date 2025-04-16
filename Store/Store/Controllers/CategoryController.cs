@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.DAL.Interfaces;
 using Store.DAL.Services.Interfaces;
+using Store.Models.Search;
 
 namespace Store.Controllers
 {
@@ -19,9 +20,9 @@ namespace Store.Controllers
       
        
         [HttpGet(Name = "GetCategoryList")]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] CategorySearchModel searchModel)
         {
-            var result = await _categoryService.GetTenantList();
+            var result = await _categoryService.GetCategoryList(searchModel);
             return Ok(result);
         }
     }

@@ -15,6 +15,8 @@ public partial class ManagementStoreContext : DbContext
     {
     }
 
+    public virtual DbSet<Banner> Banners { get; set; }
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<News> News { get; set; }
@@ -27,6 +29,41 @@ public partial class ManagementStoreContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Banner>(entity =>
+        {
+            entity.HasKey(e => e.BannerId).HasName("PK__Banner__10373C34544EB343");
+
+            entity.ToTable("Banner");
+
+            entity.Property(e => e.BannerId).HasColumnName("banner_id");
+            entity.Property(e => e.BannerCode)
+                .HasMaxLength(100)
+                .HasColumnName("banner_code");
+            entity.Property(e => e.BannerImage)
+                .HasMaxLength(255)
+                .HasColumnName("banner_image");
+            entity.Property(e => e.BannerName)
+                .HasMaxLength(255)
+                .HasColumnName("banner_name");
+            entity.Property(e => e.BannerTitle)
+                .HasMaxLength(255)
+                .HasColumnName("banner_title");
+            entity.Property(e => e.BannerTypeCode)
+                .HasMaxLength(100)
+                .HasColumnName("banner_type_code");
+            entity.Property(e => e.BannerTypeName)
+                .HasMaxLength(255)
+                .HasColumnName("banner_type_name");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
+        });
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.CategoryId).HasName("PK__Category__D54EE9B4A7FB52D5");
@@ -50,10 +87,10 @@ public partial class ManagementStoreContext : DbContext
             entity.HasKey(e => e.NewsId).HasName("PK__News__4C27CCD8FF97DB3A");
 
             entity.Property(e => e.NewsId).HasColumnName("news_id");
-            entity.Property(e => e.CreatedDate)
+            entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
-                .HasColumnName("created_date");
+                .HasColumnName("created_at");
             entity.Property(e => e.NewsDetailContent).HasColumnName("news_detail_content");
             entity.Property(e => e.NewsShortContent)
                 .HasMaxLength(255)
@@ -64,10 +101,10 @@ public partial class ManagementStoreContext : DbContext
             entity.Property(e => e.State)
                 .HasDefaultValue(false)
                 .HasColumnName("state");
-            entity.Property(e => e.UpdatedDate)
+            entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
-                .HasColumnName("updated_date");
+                .HasColumnName("updated_at");
         });
 
         modelBuilder.Entity<Product>(entity =>

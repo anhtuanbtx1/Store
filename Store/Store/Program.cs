@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Store.Common.AutoMapper;
 using Store.DAL.Interfaces;
@@ -48,6 +49,13 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 
 var app = builder.Build();
+
+app.UseCors(x => x
+               .SetIsOriginAllowed(origin => true)
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials());
+app.UseStaticFiles();
 
 
 

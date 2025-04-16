@@ -5,15 +5,15 @@ namespace Store.Common.BaseModels
     #region Paging
     public class PagingModel
     {
-        public int PageNumber { get; set; } = DefaultConfig.DefaultPageNumber;
-        public int PageSize { get; set; } = DefaultConfig.DefaultPageSize;
+        public int pageNumber { get; set; } = DefaultConfig.DefaultPageNumber;
+        public int pageSize { get; set; } = DefaultConfig.DefaultPageSize;
     }
     #endregion
     #region RESPONSE
     public class JsonResultPaging<T> : PagingModel where T : class
     {
-        public T Data { get; set; }
-        public int Total { get; set; }
+        public T data { get; set; }
+        public int total { get; set; }
     }
    
 

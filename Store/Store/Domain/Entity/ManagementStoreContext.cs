@@ -23,6 +23,8 @@ public partial class ManagementStoreContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<Template> Templates { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=10.0.0.11;Database=ManagementStore;User Id=sa;Password=Ots@123;TrustServerCertificate=True;");
@@ -95,6 +97,11 @@ public partial class ManagementStoreContext : DbContext
             entity.Property(e => e.NewsShortContent)
                 .HasMaxLength(255)
                 .HasColumnName("news_short_content");
+            entity.Property(e => e.NewsTitle)
+               .HasMaxLength(255)
+               .HasColumnName("news_title");
+
+
             entity.Property(e => e.NewsThumbnail)
                 .HasMaxLength(255)
                 .HasColumnName("news_thumbnail");
@@ -125,6 +132,7 @@ public partial class ManagementStoreContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("product_color_name");
             entity.Property(e => e.ProductDetail).HasColumnName("product_detail");
+            entity.Property(e => e.ProductShortDetail).HasColumnName("product_short_detail");
             entity.Property(e => e.ProductImage)
                 .HasMaxLength(255)
                 .HasColumnName("product_image");
@@ -159,6 +167,30 @@ public partial class ManagementStoreContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("updated_at");
+        });
+
+        modelBuilder.Entity<Template>(entity =>
+        {
+            entity.HasKey(e => e.TemplateId).HasName("PK__Template__BE44E079FC1679F7");
+
+            entity.ToTable("Template");
+
+            entity.Property(e => e.TemplateId).HasColumnName("template_id");
+            entity.Property(e => e.CreatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_date");
+            entity.Property(e => e.TemplateDetailContent).HasColumnName("template_detail_content");
+            entity.Property(e => e.TemplateCode)
+                .HasMaxLength(100)
+                .HasColumnName("template_code");
+            entity.Property(e => e.TemplateName)
+                .HasMaxLength(255)
+                .HasColumnName("template_name");
+            entity.Property(e => e.UpdatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_date");
         });
 
         OnModelCreatingPartial(modelBuilder);

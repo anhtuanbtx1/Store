@@ -10,5 +10,6 @@ namespace Store.DAL.Services.Interfaces
         Task<Acknowledgement<JsonResultPaging<List<ProductResponseModel>>>> GetProductList(ProductSearchModel searchModel);
         Task<Acknowledgement> CreateOrUpdate(ProductRequestModel postData);
         Task<Acknowledgement<ProductResponseModel>> GetById(int productId);
+        Task<Acknowledgement> DeleteById(int userId);
     }
 }

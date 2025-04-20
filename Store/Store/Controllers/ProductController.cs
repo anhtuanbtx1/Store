@@ -42,5 +42,10 @@ namespace Store.Controllers
             return ack;
         }
 
+        [HttpGet("DeleteById")]
+        public async Task<Acknowledgement> DeleteById(int userId)
+        {
+            return await _productService.DeleteById(userId);
+        }
     }
 }

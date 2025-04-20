@@ -27,7 +27,7 @@ namespace Store.Models.Respone
         public string? ProductImage { get; set; }
 
         public List<string> ListImage { get; set; }
-
+        public string? ProductShortDetail { get; set; }
         public string? ProductDetail { get; set; }
 
         public DateTime? CreatedAt { get; set; }

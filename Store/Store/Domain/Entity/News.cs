@@ -6,6 +6,7 @@ namespace Store.Domain.Entity;
 public partial class News
 {
     public int NewsId { get; set; }
+    public string? NewsTitle { get; set; }
 
     public string? NewsThumbnail { get; set; }
 

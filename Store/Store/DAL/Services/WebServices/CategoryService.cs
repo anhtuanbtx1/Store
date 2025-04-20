@@ -34,6 +34,11 @@ namespace Store.DAL.Services.WebServices
             {
                 var predicate = PredicateBuilder.New<Category>(true);
 
+                if (searchModel.mode == "ADMIN")
+                {
+                    predicate = predicate.And(i => (i.CategoryCode != "ALL"));
+                }
+
                 if (!string.IsNullOrEmpty(searchModel.searchCode))
                 {
                     var searchStringNonUnicode = Utils.NonUnicode(searchModel.searchCode.Trim().ToLower());

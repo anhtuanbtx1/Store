@@ -2,6 +2,7 @@
 using Store.Common.BaseModels;
 using Store.DAL.Interfaces;
 using Store.DAL.Services.Interfaces;
+using Store.Models.Request;
 using Store.Models.Respone;
 
 namespace Store.Controllers
@@ -28,15 +29,15 @@ namespace Store.Controllers
         }
 
         [HttpPost("Update", Name = "UpdateNew")]
-        public async Task<Acknowledgement> Update([FromBody] NewsResponseModel postData)
+        public async Task<Acknowledgement> Update([FromBody] NewRequestModel postData)
         {
             return await _newService.Update(postData);
         }
 
         [HttpGet("FindById")]
-        public async Task<Acknowledgement<NewResponseModel>> GetUserById(int newId)
+        public async Task<Acknowledgement<NewResponseModel>> GetById(int newId)
         {
-            var ack = await _newService.GetUserById(newId);
+            var ack = await _newService.GetById(newId);
             return ack;
         }
 

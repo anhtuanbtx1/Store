@@ -5,10 +5,14 @@ using Store.Common.Helper;
 using Store.DAL.Interfaces;
 using Store.DAL.Services.Interfaces;
 using Store.Domain.Entity;
+using Store.Models.Request;
 using Store.Models.Respone;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Reflection.Emit;
+using System.Security.Policy;
+using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.DAL.Services.WebServices
 {
@@ -27,7 +31,11 @@ namespace Store.DAL.Services.WebServices
             _mapper = mapper;
             _newRepository = newRepository;
         }
-
+        public string GetImageFileUrl(string rawUrl)
+        {
+            var prefixUrl = Configuration.GetSection("FTP:Host").Value;
+            return prefixUrl + rawUrl;
+        }
         public async Task<Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>> GetNewsList()
         {
             var response = new Acknowledgement<JsonResultPaging<List<NewsResponseModel>>>();
@@ -39,6 +47,17 @@ namespace Store.DAL.Services.WebServices
                    predicate
                    );
                 var data = _mapper.Map<List<NewsResponseModel>>(tennantDbList.Data);
+                data.ForEach(i =>
+                {
+                    if (!string.IsNullOrWhiteSpace(i.newsThumbnail))
+                    {
+                        i.newsThumbnail = GetImageFileUrl(i.newsThumbnail);
+                    }
+                    else
+                    {
+                        i.newsThumbnail = "../content/images/noImage.png";
+                    }
+                });
                 response.Data = new JsonResultPaging<List<NewsResponseModel>>()
                 {
                     data = data,
@@ -57,7 +76,7 @@ namespace Store.DAL.Services.WebServices
             }
         }
 
-        public async Task<Acknowledgement<NewResponseModel>> GetUserById(int newId)
+        public async Task<Acknowledgement<NewResponseModel>> GetById(int newId)
         {
             var ack = new Acknowledgement<NewResponseModel>();
             try
@@ -69,8 +88,10 @@ namespace Store.DAL.Services.WebServices
                     ack.AddMessages("Không tìm thấy user");
                     return ack;
                 }
+                var data = _mapper.Map<NewResponseModel>(user);
+                data.newsThumbnail = GetImageFileUrl(data.newsThumbnail);
 
-                ack.Data = _mapper.Map<NewResponseModel>(user);
+                ack.Data = data;
                 ack.IsSuccess = true;
 
                 return ack;
@@ -84,7 +105,7 @@ namespace Store.DAL.Services.WebServices
             }
         }
 
-        public async Task<Acknowledgement> Update(NewsResponseModel postData)
+        public async Task<Acknowledgement> Update(NewRequestModel postData)
         {
             var ack = new Acknowledgement();
             var existItem = await _newRepository.Repository.FirstOrDefaultAsync(i => i.NewsId == postData.newsId);
@@ -97,6 +118,7 @@ namespace Store.DAL.Services.WebServices
             else
             {
                 existItem.State = postData.state;
+                existItem.NewsTitle = postData.newsTitle;
                 existItem.NewsThumbnail = postData.newsThumbnail;
                 existItem.NewsDetailContent = postData.newsDetailContent;
                 existItem.UpdatedAt = DateTime.Now;

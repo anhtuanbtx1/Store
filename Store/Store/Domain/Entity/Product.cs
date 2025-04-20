@@ -30,6 +30,7 @@ public partial class Product
     public string? ProductPriceSale { get; set; }
 
     public string? ProductImage { get; set; }
+    public string? ProductShortDetail { get; set; }
 
     public string? ProductDetail { get; set; }
 

@@ -1,8 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Common.Helper;
+using Store.DAL.Interfaces;
+using Store.DAL.Repository;
+using Store.DAL.Services.Interfaces;
+using Store.Domain.Entity;
 using Store.Models;
 using Store.Models.Image;
+using Store.Models.Respone;
+using System.Text.Json;
 using static Store.Enum.EnumResponse;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.Controllers
 {
@@ -13,11 +20,13 @@ namespace Store.Controllers
         private readonly ILogger<ImageController> _logger;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ImageController( ILogger<ImageController> logger, IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
+        private readonly IProductRepository _productRepository;
+        public ImageController( ILogger<ImageController> logger, IConfiguration configuration, IWebHostEnvironment webHostEnvironment, IProductRepository productRepository)
         {
             _logger = logger;
             _configuration = configuration;
             _webHostEnvironment = webHostEnvironment;
+            _productRepository = productRepository;
         }
 
         [HttpPost]
@@ -70,6 +79,45 @@ namespace Store.Controllers
             catch (Exception ex)
             {
                 _logger.LogError("Notification UploadImage: " + ex.Message);
+                return HTTPResponseModel.Make(REPONSE_ENUM.RS_EXCEPTION, ex.Message);
+            }
+        }
+        [HttpPost("DeleteImage")]
+        public async Task<HTTPResponseModel> DeleteImage(int id)
+        {
+            try
+            {
+                // Tìm hình ảnh trong cơ sở dữ liệu
+                var data = await _productRepository.Repository.FirstOrDefaultAsync(i => i.ProductId == id);
+                List<string> listImage = JsonSerializer.Deserialize<List<string>>(data.ProductImage);
+                if (listImage.Count < 0)
+                {
+                    _logger.LogError("Image not found: " + id);
+                    return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
+                }
+                foreach (var image in listImage)
+                {
+                    // Xóa tệp hình ảnh từ thư mục
+                    var webRootPath = _webHostEnvironment.WebRootPath;
+                    // Loại bỏ dấu gạch chéo đầu tiên từ đường dẫn liên kết hình ảnh
+                    var relativePath = image.TrimStart('/');
+                    // Kết hợp đường dẫn gốc với đường dẫn tương đối để tạo thành đường dẫn tuyệt đối
+                    var filePath = Path.Combine(webRootPath, relativePath);
+
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
+               
+
+                _logger.LogInformation("Image deleted successfully: " + id);
+                return HTTPResponseModel.Make(REPONSE_ENUM.RS_OK, "Image deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("DeleteImage: " + ex.Message);
                 return HTTPResponseModel.Make(REPONSE_ENUM.RS_EXCEPTION, ex.Message);
             }
         }

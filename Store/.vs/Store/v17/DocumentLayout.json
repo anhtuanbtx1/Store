@@ -3,56 +3,92 @@
   "WorkspaceRootPath": "D:\\Receipt\\Store\\Store\\Store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\domain\\entity\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\domain\\entity\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\domain\\entity\\managementstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\domain\\entity\\managementstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\webservices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\webservices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\webservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\webservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\webservices\\newservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\webservices\\newservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\interfaces\\inewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\interfaces\\inewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\common\\util\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\common\\util\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\models\\search\\productsearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\models\\search\\productsearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\newcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\newcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\common\\automapper\\domaintodtomappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\common\\automapper\\domaintodtomappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\domain\\entity\\managementstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\domain\\entity\\managementstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\templatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\templatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\webservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\webservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\interfaces\\itemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\interfaces\\itemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\domain\\entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\domain\\entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\models\\search\\categorysearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\models\\search\\categorysearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\bannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\bannercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\repository\\newrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,24 +99,8 @@
       "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\webservices\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\domain\\entity\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\domain\\entity\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\dal\\services\\interfaces\\inewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\dal\\services\\interfaces\\inewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|solutionrelative:store\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DC138D5-EB60-493C-838D-49E3B7BA82F1}|Store\\Store.csproj|d:\\receipt\\store\\store\\store\\store\\common\\helper\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,21 +134,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "News.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\News.cs",
-              "RelativeDocumentMoniker": "Store\\Domain\\Entity\\News.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\News.cs",
-              "RelativeToolTip": "Store\\Domain\\Entity\\News.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T13:35:08.402Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -143,59 +150,267 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ManagementStoreContext.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\ManagementStoreContext.cs",
-              "RelativeDocumentMoniker": "Store\\Domain\\Entity\\ManagementStoreContext.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\ManagementStoreContext.cs",
-              "RelativeToolTip": "Store\\Domain\\Entity\\ManagementStoreContext.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAuwFQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T10:42:43.843Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Store\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Store\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBsAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T10:24:34.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Store\\DAL\\Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAABaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T10:01:36.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\ProductService.cs",
               "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\ProductService.cs",
               "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\ProductService.cs",
               "RelativeToolTip": "Store\\DAL\\Services\\WebServices\\ProductService.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAiwFcAAAAVAAAA",
+              "ViewState": "AQIAALQAAAAAAAAAAAAtwK4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T09:39:25.985Z",
+              "WhenOpened": "2025-04-19T18:29:32.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NewService.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\NewService.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\NewService.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\NewService.cs",
+              "RelativeToolTip": "Store\\DAL\\Services\\WebServices\\NewService.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAwwFAAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T08:40:08.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Store\\DAL\\Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:53:22.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Program.cs",
+              "RelativeDocumentMoniker": "Store\\Program.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Program.cs",
+              "RelativeToolTip": "Store\\Program.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAcwDMAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T02:19:35.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Repository\\ProductRepository.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "Store\\DAL\\Repository\\ProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:20:28.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "Store\\Controllers\\ImageController.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "Store\\Controllers\\ImageController.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAwwHMAAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:59:10.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "INewService.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\INewService.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Services\\Interfaces\\INewService.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\INewService.cs",
+              "RelativeToolTip": "Store\\DAL\\Services\\Interfaces\\INewService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:04:11.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductSearchModel.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Models\\Search\\ProductSearchModel.cs",
+              "RelativeDocumentMoniker": "Store\\Models\\Search\\ProductSearchModel.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Models\\Search\\ProductSearchModel.cs",
+              "RelativeToolTip": "Store\\Models\\Search\\ProductSearchModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T04:41:03.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManagementStoreContext.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\ManagementStoreContext.cs",
+              "RelativeDocumentMoniker": "Store\\Domain\\Entity\\ManagementStoreContext.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\ManagementStoreContext.cs",
+              "RelativeToolTip": "Store\\Domain\\Entity\\ManagementStoreContext.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwFoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T13:10:12.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "DomainToDTOMappingProfile.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\AutoMapper\\DomainToDTOMappingProfile.cs",
+              "RelativeDocumentMoniker": "Store\\Common\\AutoMapper\\DomainToDTOMappingProfile.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\AutoMapper\\DomainToDTOMappingProfile.cs",
+              "RelativeToolTip": "Store\\Common\\AutoMapper\\DomainToDTOMappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T03:17:25.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NewController.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\NewController.cs",
+              "RelativeDocumentMoniker": "Store\\Controllers\\NewController.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\NewController.cs",
+              "RelativeToolTip": "Store\\Controllers\\NewController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwCEAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:04:00.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CategorySearchModel.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Models\\Search\\CategorySearchModel.cs",
+              "RelativeDocumentMoniker": "Store\\Models\\Search\\CategorySearchModel.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Models\\Search\\CategorySearchModel.cs",
+              "RelativeToolTip": "Store\\Models\\Search\\CategorySearchModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:53:26.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\CategoryService.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\CategoryService.cs",
+              "RelativeToolTip": "Store\\DAL\\Services\\WebServices\\CategoryService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAApwCIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T09:05:41.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TemplateController.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\TemplateController.cs",
+              "RelativeDocumentMoniker": "Store\\Controllers\\TemplateController.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\TemplateController.cs",
+              "RelativeToolTip": "Store\\Controllers\\TemplateController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAkwBUAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T10:34:43.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Store\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Store\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAMwBgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T03:24:42.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ITemplateService.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\ITemplateService.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Services\\Interfaces\\ITemplateService.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\ITemplateService.cs",
+              "RelativeToolTip": "Store\\DAL\\Services\\Interfaces\\ITemplateService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T13:13:23.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\Product.cs",
+              "RelativeDocumentMoniker": "Store\\Domain\\Entity\\Product.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\Product.cs",
+              "RelativeToolTip": "Store\\Domain\\Entity\\Product.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwCAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T02:42:27.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BannerController.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\BannerController.cs",
+              "RelativeDocumentMoniker": "Store\\Controllers\\BannerController.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\BannerController.cs",
+              "RelativeToolTip": "Store\\Controllers\\BannerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T10:34:48.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Repository\\CategoryRepository.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\CategoryRepository.cs",
+              "RelativeToolTip": "Store\\DAL\\Repository\\CategoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:46:07.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Store\\DAL\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "Store\\DAL\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T10:44:43.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Interfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "Store\\DAL\\Interfaces\\ICategoryRepository.cs",
@@ -203,12 +418,11 @@
               "RelativeToolTip": "Store\\DAL\\Interfaces\\ICategoryRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T10:00:46.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T10:00:46.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "BaseService.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\BaseService.cs",
               "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\BaseService.cs",
@@ -221,33 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\Product.cs",
-              "RelativeDocumentMoniker": "Store\\Domain\\Entity\\Product.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\Product.cs",
-              "RelativeToolTip": "Store\\Domain\\Entity\\Product.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T02:42:27.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Store\\Controllers\\CategoryController.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Store\\Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:24:42.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\appsettings.json",
               "RelativeDocumentMoniker": "Store\\appsettings.json",
@@ -255,76 +443,11 @@
               "RelativeToolTip": "Store\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-16T09:25:59.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:25:59.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NewService.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\NewService.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\NewService.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\NewService.cs",
-              "RelativeToolTip": "Store\\DAL\\Services\\WebServices\\NewService.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAiwC4AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:13:09.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Services\\WebServices\\CategoryService.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\WebServices\\CategoryService.cs",
-              "RelativeToolTip": "Store\\DAL\\Services\\WebServices\\CategoryService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAswCIAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T09:05:41.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Program.cs",
-              "RelativeDocumentMoniker": "Store\\Program.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Program.cs",
-              "RelativeToolTip": "Store\\Program.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAcwDoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T02:19:35.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Utils.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\Util\\Utils.cs",
-              "RelativeDocumentMoniker": "Store\\Common\\Util\\Utils.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\Util\\Utils.cs",
-              "RelativeToolTip": "Store\\Common\\Util\\Utils.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAADsBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T09:09:45.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Repository\\CategoryRepository.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\CategoryRepository.cs",
-              "RelativeToolTip": "Store\\DAL\\Repository\\CategoryRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:46:07.933Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "NewRepository.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\NewRepository.cs",
               "RelativeDocumentMoniker": "Store\\DAL\\Repository\\NewRepository.cs",
@@ -336,31 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Repository\\ProductRepository.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Repository\\ProductRepository.cs",
-              "RelativeToolTip": "Store\\DAL\\Repository\\ProductRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:20:28.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "INewService.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\INewService.cs",
-              "RelativeDocumentMoniker": "Store\\DAL\\Services\\Interfaces\\INewService.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Services\\Interfaces\\INewService.cs",
-              "RelativeToolTip": "Store\\DAL\\Services\\Interfaces\\INewService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T02:15:41.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "BaseAuditableEntity.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\BaseAuditableEntity.cs",
               "RelativeDocumentMoniker": "Store\\Domain\\Entity\\BaseAuditableEntity.cs",
@@ -372,20 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ImageController.cs",
-              "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ImageController.cs",
-              "RelativeDocumentMoniker": "Store\\Controllers\\ImageController.cs",
-              "ToolTip": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\ImageController.cs",
-              "RelativeToolTip": "Store\\Controllers\\ImageController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAgwCoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T03:59:10.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "ImageModel.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Models\\Image\\ImageModel.cs",
               "RelativeDocumentMoniker": "Store\\Models\\Image\\ImageModel.cs",
@@ -398,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Domain\\Entity\\Category.cs",
               "RelativeDocumentMoniker": "Store\\Domain\\Entity\\Category.cs",
@@ -410,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "Helper.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\Helper\\Helper.cs",
               "RelativeDocumentMoniker": "Store\\Common\\Helper\\Helper.cs",
@@ -422,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Store\\Controllers\\WeatherForecastController.cs",
@@ -434,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "Acknowledgement.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\Common\\BaseModels\\Acknowledgement.cs",
               "RelativeDocumentMoniker": "Store\\Common\\BaseModels\\Acknowledgement.cs",
@@ -447,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\Receipt\\Store\\Store\\Store\\Store\\DAL\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "Store\\DAL\\Interfaces\\IRepository.cs",

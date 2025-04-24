@@ -94,11 +94,11 @@ namespace Store.DAL.Services.WebServices
                     }
                     
                 }
-                if (searchModel.statusCode.Count > 0)
+                if (searchModel.statusCodes.Count > 0)
                 {
-                    if (!searchModel.statusCode.Contains("ALL"))
+                    if (!searchModel.statusCodes.Contains("ALL"))
                     {
-                        predicate = predicate.And(i => (searchModel.statusCode.Contains(i.ProductStatusCode)));
+                        predicate = predicate.And(i => (searchModel.statusCodes.Contains(i.ProductStatusCode)));
                     }
                    
                 }
@@ -230,12 +230,13 @@ namespace Store.DAL.Services.WebServices
         public async Task<Acknowledgement> DeleteById(int userId)
         {
             var ack = new Acknowledgement();
-            var user = await _productRepository.Repository.FirstOrDefaultAsync(i => i.ProductId == userId);
-            if (user == null)
+            var existItem = await _productRepository.Repository.FirstOrDefaultAsync(i => i.ProductId == userId);
+            if (existItem == null)
             {
-                ack.AddMessage("Không tìm thấy người dùng");
+                ack.AddMessage("Không tìm thấy sản phẩm");
                 return ack;
             }
+            DeleteImage(existItem.ProductImage);
             await _productRepository.Repository.DeleteAsync(userId);
             return ack;
         }

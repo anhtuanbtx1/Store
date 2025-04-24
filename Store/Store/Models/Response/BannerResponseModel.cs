@@ -7,6 +7,7 @@ namespace Store.Models.Response
         public int bannerId { get; set; }
 
         public string? bannerTitle { get; set; }
+        public string? bannerSubTitle { get; set; }
 
         public string? bannerCode { get; set; }
 

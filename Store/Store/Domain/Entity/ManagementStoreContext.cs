@@ -50,6 +50,9 @@ public partial class ManagementStoreContext : DbContext
             entity.Property(e => e.BannerTitle)
                 .HasMaxLength(255)
                 .HasColumnName("banner_title");
+            entity.Property(e => e.BannerSubTitle)
+                .HasMaxLength(255)
+                .HasColumnName("banner_sub_title");
             entity.Property(e => e.BannerTypeCode)
                 .HasMaxLength(100)
                 .HasColumnName("banner_type_code");

@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Store.Common.BaseModels;
 using Store.DAL.Services.Interfaces;
+using Store.DAL.Services.WebServices;
+using Store.Models.Request;
 using Store.Models.Search;
 
 namespace Store.Controllers

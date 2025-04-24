@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LinqKit;
+using Microsoft.AspNetCore.Hosting;
 using Store.Common.BaseModels;
 using Store.Common.Helper;
 using Store.Common.Util;
@@ -7,12 +8,14 @@ using Store.DAL.Interfaces;
 using Store.DAL.Repository;
 using Store.DAL.Services.Interfaces;
 using Store.Domain.Entity;
+using Store.Models;
 using Store.Models.Request;
 using Store.Models.Respone;
 using Store.Models.Response;
 using Store.Models.Search;
 using System.Security.Policy;
 using System.Text.Json;
+using static Store.Enum.EnumResponse;
 
 namespace Store.DAL.Services.WebServices
 {
@@ -20,9 +23,11 @@ namespace Store.DAL.Services.WebServices
     {
         private readonly IMapper _mapper;
         private readonly IBannerRepository _bannerRepository;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         public BannerService(
          ILogger<BannerService> logger,
          IHttpContextAccessor httpContextAccessor,
+         IWebHostEnvironment webHostEnvironment,
          IConfiguration configuration,
          IBannerRepository bannerRepository,
          IMapper mapper
@@ -30,6 +35,7 @@ namespace Store.DAL.Services.WebServices
         {
             _mapper = mapper;
             _bannerRepository = bannerRepository;
+            _webHostEnvironment = webHostEnvironment;
         }
         public string GetImageFileUrl(string rawUrl)
         {
@@ -97,6 +103,7 @@ namespace Store.DAL.Services.WebServices
             }
             else
             {
+                await DeleteImage(existItem.BannerImage);
                 existItem.BannerImage = postData.bannerImage;
                 await ack.TrySaveChangesAsync(res => res.UpdateAsync(existItem), _bannerRepository.Repository);
             }
@@ -131,5 +138,41 @@ namespace Store.DAL.Services.WebServices
                 return ack;
             }
         }
+
+        public async Task<HTTPResponseModel> DeleteImage(string productImage)
+        {
+            try
+            {
+                List<string> listImage = JsonSerializer.Deserialize<List<string>>(productImage);
+                if (listImage.Count < 0)
+                {
+                    _logger.LogError("Image not found");
+                    return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
+                }
+                foreach (var image in listImage)
+                {
+                    // Xóa tệp hình ảnh từ thư mục
+                    var webRootPath = _webHostEnvironment.WebRootPath;
+                    // Loại bỏ dấu gạch chéo đầu tiên từ đường dẫn liên kết hình ảnh
+                    var relativePath = image.TrimStart('/');
+                    // Kết hợp đường dẫn gốc với đường dẫn tương đối để tạo thành đường dẫn tuyệt đối
+                    var filePath = Path.Combine(webRootPath, relativePath);
+
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
+                _logger.LogInformation("Image deleted successfully: ");
+                return HTTPResponseModel.Make(REPONSE_ENUM.RS_OK, "Image deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("DeleteImage: " + ex.Message);
+                return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
+            }
+        }
     }
 }
+

@@ -94,13 +94,15 @@ namespace Store.DAL.Services.WebServices
                     }
                     
                 }
-                if (searchModel.statusCodes.Count > 0)
+                if (searchModel.statusCodes != null)
                 {
-                    if (!searchModel.statusCodes.Contains("ALL"))
+                    if(searchModel.statusCodes.Count > 0)
                     {
-                        predicate = predicate.And(i => (searchModel.statusCodes.Contains(i.ProductStatusCode)));
+                        if (!searchModel.statusCodes.Contains("ALL"))
+                        {
+                            predicate = predicate.And(i => (searchModel.statusCodes.Contains(i.ProductStatusCode)));
+                        }
                     }
-                   
                 }
 
                 var dbList = await _productRepository.ReadOnlyRespository.GetWithPagingAsync(
@@ -206,7 +208,7 @@ namespace Store.DAL.Services.WebServices
                 }
                 else
                 {
-                    DeleteImage(existItem.ProductImage);
+                    await DeleteImage(existItem.ProductImage);
                     existItem.ProductImage = jsonString;
                     existItem.ProductColorCode = postData.productColorCode;
                     existItem.ProductColorName = postData.productColorName;

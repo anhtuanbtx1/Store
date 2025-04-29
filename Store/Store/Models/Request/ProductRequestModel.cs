@@ -1,4 +1,8 @@
-﻿namespace Store.Models.Request
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Store.Models.Image;
+
+namespace Store.Models.Request
 {
     public class ProductRequestModel
     {
@@ -27,7 +31,10 @@
         public string? productPriceSale { get; set; }
 
         public List<string>? listImage { get; set; }
+        public List<string>? uploadFiles { get; set; }
+        public List<UploadImageModel>? listUploadFiles { get; set; }
 
         public string? productDetail { get; set; }
+        public string? productShortDetail { get; set; }
     }
 }

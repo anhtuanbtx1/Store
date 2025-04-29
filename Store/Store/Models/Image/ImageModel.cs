@@ -2,7 +2,8 @@
 {
     public class UploadImageModel
     {
-        public List<IFormFile> Image { get; set; }
+        public IFormFile Image { get; set; }
+        public string Type { get; set; }
     }
     public class ImageModel
     {

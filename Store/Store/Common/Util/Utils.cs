@@ -3,6 +3,7 @@ using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Text;
+using Store.Models.Image;
 
 namespace Store.Common.Util
 {
@@ -297,6 +298,87 @@ namespace Store.Common.Util
             return Regex.IsMatch(input, specialCharPattern);
         }
 
+        public static string GetFileExtensionFromBase64(string base64String)
+        {
+            if (string.IsNullOrEmpty(base64String))
+                return string.Empty;
+
+            try
+            {
+                var dataPrefix = base64String.Substring(0, base64String.IndexOf(";"));
+                var mimeType = dataPrefix.Split(':')[1];
+
+                // Map mime types to file extensions
+                return mimeType switch
+                {
+                    "image/jpeg" => ".jpg",
+                    "image/png" => ".png",
+                    "image/gif" => ".gif",
+                    "image/bmp" => ".bmp",
+                    "image/webp" => ".webp",
+                    "application/pdf" => ".pdf",
+                    _ => "" // Không biết thì trả về chuỗi rỗng hoặc gán mặc định
+                };
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        public static List<UploadImageModel> ConvertBase64ListToFormFileList(List<string> base64List)
+        {
+            List<UploadImageModel> listImageModel = new List<UploadImageModel>();
+            var formFiles = new List<IFormFile>();
+
+            foreach (var base64String in base64List)
+            {
+                // Nếu base64 có chứa tiền tố như "data:image/png;base64,", ta cần loại bỏ
+                var base64Data = base64String.Contains(",") ? base64String.Split(',')[1] : base64String;
+
+                var bytes = Convert.FromBase64String(base64Data);
+                var stream = new MemoryStream(bytes);
+
+                var formFile = new FormFile(stream, 0, stream.Length, "file", Guid.NewGuid().ToString())
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "application/octet-stream" // Hoặc đoán content-type nếu cần
+                };
+                var type = GetFileExtensionFromBase64(base64String);
+                var item = new UploadImageModel { Image = formFile, Type = type };
+
+                listImageModel.Add(item);
+            }
+
+            return listImageModel;
+        }
+
+
+        public static List<UploadImageModel> ConvertBase64ListToFormFile(string base64String)
+        {
+            List<UploadImageModel> listImageModel = new List<UploadImageModel>();
+          
+
+           
+                // Nếu base64 có chứa tiền tố như "data:image/png;base64,", ta cần loại bỏ
+                var base64Data = base64String.Contains(",") ? base64String.Split(',')[1] : base64String;
+
+                var bytes = Convert.FromBase64String(base64Data);
+                var stream = new MemoryStream(bytes);
+
+                var formFile = new FormFile(stream, 0, stream.Length, "file", Guid.NewGuid().ToString())
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "application/octet-stream" // Hoặc đoán content-type nếu cần
+                };
+                var type = GetFileExtensionFromBase64(base64String);
+                var item = new UploadImageModel { Image = formFile, Type = type };
+
+                listImageModel.Add(item);
+            
+
+            return listImageModel;
+        }
         #endregion
 
 

@@ -36,7 +36,7 @@ namespace Store.Controllers
             {
                 List<string> imagesResponse = new List<string>();
 
-                if (model.Image != null && model.Image.Count > 0)
+                if (model.Image != null)
                 {
                     var webRootPath = _webHostEnvironment.WebRootPath; 
                     var now = DateTime.Now;
@@ -50,22 +50,21 @@ namespace Store.Controllers
 
                     _logger.LogInformation("UploadImage << SaveLocalFile Begin: " + DateTime.Now);
 
-                    foreach (var file in model.Image)
-                    {
+                    
                         //var fileName = $"{now.Ticks}{Path.GetExtension(file.FileName)}";
-                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.FileName)}";
+                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(model.Image.FileName)}";
                         var filePath = Path.Combine(folderPath, fileName);
 
                         // Lưu file vào thư mục
                         using (var fileStream = new FileStream(filePath, FileMode.Create))
                         {
-                            await file.CopyToAsync(fileStream);
+                            await model.Image.CopyToAsync(fileStream);
                         }
 
                         // Đường dẫn tương đối tới hình ảnh đã lưu
                         var relativePath = Path.Combine("Image", "warrantyImage", $"{now.Year}_{now.Month}", fileName);
                         imagesResponse.Add(Path.Combine("/", relativePath).Replace("\\", "/"));
-                    }
+                    
 
                     _logger.LogInformation("Notification UploadImage << SaveLocalFile End: " + DateTime.Now);
                     return HTTPResponseModel.Make(REPONSE_ENUM.RS_OK, "Successful", null, imagesResponse);

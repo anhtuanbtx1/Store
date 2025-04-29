@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Common.BaseModels;
+using Store.Common.Util;
 using Store.DAL.Interfaces;
 using Store.DAL.Services.Interfaces;
 using Store.Models.Request;
@@ -31,6 +32,11 @@ namespace Store.Controllers
         [HttpPost("Update", Name = "UpdateNew")]
         public async Task<Acknowledgement> Update([FromBody] NewRequestModel postData)
         {
+            if (postData.uploadFile != null)
+            {
+                var listIFromFile = Utils.ConvertBase64ListToFormFile(postData.uploadFile);
+                postData.listUploadFiles = listIFromFile;
+            }
             return await _newService.Update(postData);
         }
 

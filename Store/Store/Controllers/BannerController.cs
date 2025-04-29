@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Common.BaseModels;
+using Store.Common.Util;
 using Store.DAL.Services.Interfaces;
 using Store.DAL.Services.WebServices;
 using Store.Models.Request;
@@ -32,10 +33,16 @@ namespace Store.Controllers
         [HttpPost("Update", Name = "UpdateBanner")]
         public async Task<Acknowledgement> Update([FromBody] BannerRequestModel postData)
         {
+            if(postData.uploadFile != null)
+            {
+                var listIFromFile = Utils.ConvertBase64ListToFormFile(postData.uploadFile);
+                postData.listUploadFiles = listIFromFile;
+            }
+            
             return await _bannerService.Update(postData);
         }
 
-        [HttpPost("FindById")]
+        [HttpGet("FindById")]
         public async Task<Acknowledgement> FindById(int bannerId)
         {
             return await _bannerService.FindById(bannerId);

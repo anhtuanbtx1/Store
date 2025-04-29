@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LinqKit;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Store.Common.BaseModels;
 using Store.Common.Helper;
 using Store.Common.Util;
@@ -9,11 +10,14 @@ using Store.DAL.Repository;
 using Store.DAL.Services.Interfaces;
 using Store.Domain.Entity;
 using Store.Models;
+using Store.Models.Image;
 using Store.Models.Request;
 using Store.Models.Respone;
 using Store.Models.Search;
+using System.Buffers.Text;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection.Emit;
+using System.Security.Policy;
 using System.Text.Json;
 using static Store.Enum.EnumResponse;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -174,15 +178,14 @@ namespace Store.DAL.Services.WebServices
         public async Task<Acknowledgement> CreateOrUpdate(ProductRequestModel postData)
         {
             var ack = new Acknowledgement();
-            string jsonString = JsonSerializer.Serialize(postData.listImage);
-
+          
+            var newProduct = _mapper.Map<Product>(postData);
             if (postData.productId == 0)
             {
-                var newProduct = _mapper.Map<Product>(postData);
-                newProduct.ProductImage = jsonString;
                 newProduct.ProductColorCode = postData.productColorCode;
                 newProduct.ProductColorName = postData.productColorName;
                 newProduct.ProductDetail = postData.productDetail ?? "";
+                newProduct.ProductShortDetail = postData.productShortDetail ?? "";
                 newProduct.ProductName = postData.productName ?? "";
                 newProduct.ProductStatusName = postData.productStatusName ?? "";
                 newProduct.ProductStatusCode = postData.productStatusCode ?? "";
@@ -194,6 +197,12 @@ namespace Store.DAL.Services.WebServices
                 newProduct.ProductPriceSale = postData.productPriceSale ?? "";
                 newProduct.CreatedAt = DateTime.Now;
                 newProduct.UpdatedAt = DateTime.Now;
+                if (postData.uploadFiles != null || postData.uploadFiles.Count > 0)
+                {
+                    var listPath = await UploadImage(postData.listUploadFiles);
+                    string jsonString = JsonSerializer.Serialize(listPath);
+                    newProduct.ProductImage = jsonString;
+                }
 
                 await ack.TrySaveChangesAsync(res => res.AddAsync(newProduct), _productRepository.Repository);
             }
@@ -208,11 +217,10 @@ namespace Store.DAL.Services.WebServices
                 }
                 else
                 {
-                    await DeleteImage(existItem.ProductImage);
-                    existItem.ProductImage = jsonString;
                     existItem.ProductColorCode = postData.productColorCode;
                     existItem.ProductColorName = postData.productColorName;
                     existItem.ProductDetail = postData.productDetail ?? "";
+                    existItem.ProductShortDetail = postData.productShortDetail ?? "";
                     existItem.ProductName = postData.productName ?? "";
                     existItem.ProductStatusName = postData.productStatusName ?? "";
                     existItem.ProductStatusCode = postData.productStatusCode ?? "";
@@ -223,6 +231,34 @@ namespace Store.DAL.Services.WebServices
                     existItem.ProductPrice = postData.productPrice ?? "";
                     existItem.ProductPriceSale = postData.productPriceSale ?? "";
                     existItem.UpdatedAt = DateTime.Now;
+
+                    var paths = postData.listImage.Select(url =>
+                    {
+                        var index = url.IndexOf("/Image", StringComparison.OrdinalIgnoreCase);
+                        return index >= 0 ? url.Substring(index) : url;
+                    }).ToList();
+                    List<string> imagePaths = JsonSerializer.Deserialize<List<string>>(existItem.ProductImage);
+                    var onlyInList1 = imagePaths.Except(paths).ToList();
+                    if(onlyInList1.Count > 0)
+                    {
+                        foreach (var item in onlyInList1)
+                        {
+                            _=DeleteImage(item);
+                        }
+                    }
+
+                    if (postData.uploadFiles.Count > 0)
+                    {
+                        var listPath = await UploadImage(postData.listUploadFiles);
+                        paths.AddRange(listPath);
+                        string jsonString = JsonSerializer.Serialize(paths);
+                        existItem.ProductImage = jsonString;
+                    }
+                    else
+                    {
+                        string jsonString = JsonSerializer.Serialize(paths);
+                        existItem.ProductImage = jsonString;
+                    }
                     await ack.TrySaveChangesAsync(res => res.UpdateAsync(existItem), _productRepository.Repository);
                 }
             }
@@ -275,6 +311,61 @@ namespace Store.DAL.Services.WebServices
             {
                 _logger.LogError("DeleteImage: " + ex.Message);
                 return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
+            }
+        }
+
+
+        public async Task<List<string>> UploadImage([FromForm] List<UploadImageModel> model)
+        {
+            try
+            {
+                List<string> imagesResponse = new List<string>();
+
+                if (model != null && model.Count > 0)
+                {
+                    var webRootPath = _webHostEnvironment.WebRootPath;
+                    var now = DateTime.Now;
+                    var folderPath = Path.Combine(webRootPath, "Image", "warrantyImage", $"{now.Year}_{now.Month}");
+
+                    // Tạo thư mục nếu chưa tồn tại
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+
+                    _logger.LogInformation("UploadImage << SaveLocalFile Begin: " + DateTime.Now);
+
+                    foreach (var file in model)
+                    {
+                        string extension = Utils.GetFileExtensionFromBase64(file.Type); 
+                        //var fileName = $"{now.Ticks}{Path.GetExtension(file.FileName)}";
+                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + file.Type;
+                        var filePath = Path.Combine(folderPath, fileName);
+
+                        // Lưu file vào thư mục
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.Image.CopyToAsync(fileStream);
+                        }
+
+                        // Đường dẫn tương đối tới hình ảnh đã lưu
+                        var relativePath = Path.Combine("Image", "warrantyImage", $"{now.Year}_{now.Month}", fileName);
+                        imagesResponse.Add(Path.Combine("/", relativePath).Replace("\\", "/"));
+                    }
+
+                    _logger.LogInformation("Notification UploadImage << SaveLocalFile End: " + DateTime.Now);
+                    return imagesResponse;
+                }
+                else
+                {
+                    _logger.LogError("Notification Insert Image : image null");
+                    throw new Exception("Invalid input data !");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Notification UploadImage: " + ex.Message);
+                return null;
             }
         }
     }

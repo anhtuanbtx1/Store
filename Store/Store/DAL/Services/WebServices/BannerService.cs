@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LinqKit;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Store.Common.BaseModels;
 using Store.Common.Helper;
 using Store.Common.Util;
@@ -9,6 +10,7 @@ using Store.DAL.Repository;
 using Store.DAL.Services.Interfaces;
 using Store.Domain.Entity;
 using Store.Models;
+using Store.Models.Image;
 using Store.Models.Request;
 using Store.Models.Respone;
 using Store.Models.Response;
@@ -103,8 +105,23 @@ namespace Store.DAL.Services.WebServices
             }
             else
             {
-                await DeleteImage(existItem.BannerImage);
-                existItem.BannerImage = postData.bannerImage;
+                if (postData.uploadFile != null)
+                {
+                    var index = existItem.BannerImage.IndexOf("/Image", StringComparison.OrdinalIgnoreCase);
+                    if (index >= 0)
+                    {
+                       var item = existItem.BannerImage.Substring(index);
+                        _ = DeleteImage(item);
+                    }
+                    var listPath = await UploadImage(postData.listUploadFiles);
+                    
+                    existItem.BannerImage = listPath[0];
+                }
+                existItem.BannerName = postData.bannerName;
+                existItem.BannerTitle = postData.bannerTitle;
+                existItem.BannerSubTitle = postData?.bannerSubTitle;
+                existItem.UpdatedAt = DateTime.Now;
+
                 await ack.TrySaveChangesAsync(res => res.UpdateAsync(existItem), _bannerRepository.Repository);
             }
 
@@ -124,6 +141,7 @@ namespace Store.DAL.Services.WebServices
                     ack.AddMessages("Không tìm thấy banner");
                     return ack;
                 }
+                banner.BannerImage = GetImageFileUrl(banner.BannerImage);
 
                 ack.Data = _mapper.Map<BannerResponseModel>(banner);
                 ack.IsSuccess = true;
@@ -171,6 +189,60 @@ namespace Store.DAL.Services.WebServices
             {
                 _logger.LogError("DeleteImage: " + ex.Message);
                 return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
+            }
+        }
+
+        public async Task<List<string>> UploadImage([FromForm] List<UploadImageModel> model)
+        {
+            try
+            {
+                List<string> imagesResponse = new List<string>();
+
+                if (model != null && model.Count > 0)
+                {
+                    var webRootPath = _webHostEnvironment.WebRootPath;
+                    var now = DateTime.Now;
+                    var folderPath = Path.Combine(webRootPath, "Image", "warrantyImage", $"{now.Year}_{now.Month}");
+
+                    // Tạo thư mục nếu chưa tồn tại
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+
+                    _logger.LogInformation("UploadImage << SaveLocalFile Begin: " + DateTime.Now);
+
+                    foreach (var file in model)
+                    {
+                        string extension = Utils.GetFileExtensionFromBase64(file.Type);
+                        //var fileName = $"{now.Ticks}{Path.GetExtension(file.FileName)}";
+                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + file.Type;
+                        var filePath = Path.Combine(folderPath, fileName);
+
+                        // Lưu file vào thư mục
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.Image.CopyToAsync(fileStream);
+                        }
+
+                        // Đường dẫn tương đối tới hình ảnh đã lưu
+                        var relativePath = Path.Combine("Image", "warrantyImage", $"{now.Year}_{now.Month}", fileName);
+                        imagesResponse.Add(Path.Combine("/", relativePath).Replace("\\", "/"));
+                    }
+
+                    _logger.LogInformation("Notification UploadImage << SaveLocalFile End: " + DateTime.Now);
+                    return imagesResponse;
+                }
+                else
+                {
+                    _logger.LogError("Notification Insert Image : image null");
+                    throw new Exception("Invalid input data !");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Notification UploadImage: " + ex.Message);
+                return null;
             }
         }
     }

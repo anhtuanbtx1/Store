@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Common.BaseModels;
+using Store.Common.Util;
 using Store.DAL.Services.Interfaces;
 using Store.DAL.Services.WebServices;
 using Store.Models.Request;
@@ -28,10 +29,12 @@ namespace Store.Controllers
             var result = await _productService.GetProductList(searchModel);
             return Ok(result);
         }
-
+       
         [HttpPost("CreateOrUpdate", Name = "CreateOrUpdate")]
         public async Task<Acknowledgement> CreateOrUpdate([FromBody] ProductRequestModel postData)
         {
+            var listIFromFile = Utils.ConvertBase64ListToFormFileList(postData.uploadFiles);
+            postData.listUploadFiles = listIFromFile;
             return await _productService.CreateOrUpdate(postData);
         }
 

@@ -34,4 +34,17 @@ namespace Store.Models.Respone
 
         public DateTime? UpdatedAt { get; set; }
     }
+
+    public class ListProductResponseModel
+    {
+        public int ProductId { get; set; }
+        public string ProductName { get; set; } = null!;
+        public string? ProductStatusCode { get; set; }
+        public string? ProductStatusName { get; set; }
+        public string? ProductImage { get; set; }
+        public List<string> ListImage { get; set; }
+        public string? ProductPrice { get; set; }
+        public string? ProductPriceSale { get; set; }
+
+    }
 }

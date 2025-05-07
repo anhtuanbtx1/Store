@@ -7,9 +7,9 @@ namespace Store.DAL.Services.Interfaces
 {
     public interface IProductService : IBaseService, IDisposable
     {
-        Task<Acknowledgement<JsonResultPaging<List<ProductResponseModel>>>> GetProductList(ProductSearchModel searchModel);
+        Task<Acknowledgement<JsonResultPaging<List<ListProductResponseModel>>>> GetProductList(ProductSearchModel searchModel);
         Task<Acknowledgement> CreateOrUpdate(ProductRequestModel postData);
         Task<Acknowledgement<ProductResponseModel>> GetById(int productId);
-        Task<Acknowledgement> DeleteById(int userId);
+        Task<Acknowledgement> DeleteById(int productId);
     }
 }

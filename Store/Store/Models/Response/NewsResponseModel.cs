@@ -8,7 +8,6 @@ namespace Store.Models.Respone
         public int newsId { get; set; }
         public string newsTitle { get; set; }
         public string newsThumbnail { get; set; }
-        public string newsDetailContent { get; set; }
         public string newsShortContent { get; set; }
         public bool state { get; set; }
         public DateTime updatedAt { get; set; }
@@ -19,6 +18,7 @@ namespace Store.Models.Respone
         public int newsId { get; set; }
         public string newsTitle { get; set; }
         public string newsThumbnail { get; set; }
+        public string newsShortContent { get; set; }
         public string newsDetailContent { get; set; }
         public bool state { get; set; }
         public DateTime updatedAt { get; set; }

@@ -53,9 +53,9 @@ namespace Store.DAL.Services.WebServices
             }
             return result;
         }
-        public async Task<Acknowledgement<JsonResultPaging<List<ProductResponseModel>>>> GetProductList(ProductSearchModel searchModel)
+        public async Task<Acknowledgement<JsonResultPaging<List<ListProductResponseModel>>>> GetProductList(ProductSearchModel searchModel)
         {
-            var response = new Acknowledgement<JsonResultPaging<List<ProductResponseModel>>>();
+            var response = new Acknowledgement<JsonResultPaging<List<ListProductResponseModel>>>();
             try
             {
                 var predicate = PredicateBuilder.New<Product>(true);
@@ -93,7 +93,7 @@ namespace Store.DAL.Services.WebServices
                 {
                     if (searchModel.colorCode != "ALL")
                     {
-                        var searchColorCode = Utils.NonUnicode(searchModel.spaceCode.Trim().ToLower());
+                        var searchColorCode = Utils.NonUnicode(searchModel.colorCode.Trim().ToLower());
                         predicate = predicate.And(i => (i.ProductColorCode.Trim().ToLower().Contains(searchColorCode)));
                     }
                     
@@ -113,7 +113,7 @@ namespace Store.DAL.Services.WebServices
                      new PagingParameters(searchModel.pageNumber, searchModel.pageSize),
                    predicate, i => i.OrderByDescending(p => p.UpdatedAt)
                    );
-                var data = _mapper.Map<List<ProductResponseModel>>(dbList.Data);
+                var data = _mapper.Map<List<ListProductResponseModel>>(dbList.Data);
                 data.ForEach(i =>
                 {
                     if (!string.IsNullOrWhiteSpace(i.ProductImage))
@@ -127,7 +127,7 @@ namespace Store.DAL.Services.WebServices
                     }
                 });
 
-                response.Data = new JsonResultPaging<List<ProductResponseModel>>()
+                response.Data = new JsonResultPaging<List<ListProductResponseModel>>()
                 {
                     data = data,
                     pageNumber = searchModel.pageNumber,
@@ -265,17 +265,17 @@ namespace Store.DAL.Services.WebServices
             return ack;
         }
 
-        public async Task<Acknowledgement> DeleteById(int userId)
+        public async Task<Acknowledgement> DeleteById(int productId)
         {
             var ack = new Acknowledgement();
-            var existItem = await _productRepository.Repository.FirstOrDefaultAsync(i => i.ProductId == userId);
+            var existItem = await _productRepository.Repository.FirstOrDefaultAsync(i => i.ProductId == productId);
             if (existItem == null)
             {
                 ack.AddMessage("Không tìm thấy sản phẩm");
                 return ack;
             }
             DeleteImage(existItem.ProductImage);
-            await _productRepository.Repository.DeleteAsync(userId);
+            await _productRepository.Repository.DeleteAsync(productId);
             return ack;
         }
 

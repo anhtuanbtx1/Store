@@ -126,7 +126,7 @@ namespace Store.DAL.Services.WebServices
             }
             else
             {
-                if (postData.uploadFile != null)
+                if (!string.IsNullOrEmpty(postData.uploadFile))
                 {
                     var index = existItem.NewsThumbnail.IndexOf("/Image", StringComparison.OrdinalIgnoreCase);
                     if (index >= 0)

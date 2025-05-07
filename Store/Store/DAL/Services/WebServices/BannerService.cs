@@ -64,7 +64,7 @@ namespace Store.DAL.Services.WebServices
                 }
 
                 var dbList = await _bannerRepository.ReadOnlyRespository.GetWithPagingAsync(
-                   new PagingParameters(1, 100),
+                   new PagingParameters(1, 10),
                    predicate
                    );
                 var data = _mapper.Map<List<BannerResponseModel>>(dbList.Data);
@@ -79,8 +79,8 @@ namespace Store.DAL.Services.WebServices
                 {
                     data = data,
                     pageNumber = 1,
-                    pageSize = 100,
-                    total = 100
+                    pageSize = dbList.PageSize,
+                    total = dbList.TotalRecords
                 };
                 response.IsSuccess = true;
                 return response;

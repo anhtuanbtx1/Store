@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
@@ -8,6 +9,7 @@ using Store.DAL.Repository;
 using Store.DAL.Services.Interfaces;
 using Store.DAL.Services.WebServices;
 using Store.Domain.Entity;
+using System.IO.Compression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,8 +53,26 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBannerRepository, BannerRepository>();
 builder.Services.AddScoped<ITemplateRepository, TemplateRepository>();
 
+// Add Response Compression
+builder.Services.AddResponseCompression(options =>
+{
+    options.Providers.Add<GzipCompressionProvider>();
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/json", "text/plain", "text/html", "text/css", "application/javascript" });
+    options.EnableForHttps = true;
+});
+
+// Configure Gzip compression level
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Fastest;
+});
+
 
 var app = builder.Build();
+
+// Use Response Compression
+app.UseResponseCompression();
 
 app.UseCors(x => x
                .SetIsOriginAllowed(origin => true)

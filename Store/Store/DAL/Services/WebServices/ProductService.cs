@@ -109,10 +109,30 @@ namespace Store.DAL.Services.WebServices
                     }
                 }
 
-                var dbList = await _productRepository.ReadOnlyRespository.GetWithPagingAsync(
-                     new PagingParameters(searchModel.pageNumber, searchModel.pageSize),
-                   predicate, i => i.OrderByDescending(p => p.UpdatedAt)
-                   );
+                var dbList = await _productRepository.ReadOnlyRespository.GetWithPagingAsync(n => new Product
+                {
+                    CreatedAt = n.CreatedAt,
+                    ProductId = n.ProductId,
+                    ProductName = n.ProductName,
+                    ProductPrice = n.ProductPrice,
+                    ProductPriceSale = n.ProductPriceSale,
+                    ProductStatusCode = n.ProductStatusCode,
+                    ProductStatusName = n.ProductStatusName,
+                    ProductImage = n.ProductImage,
+                    ProductColorCode = n.ProductColorCode,
+                    ProductSeriesCode = n.ProductSeriesCode,
+                    ProductColorName = n.ProductColorName,
+                    ProductSeriesName = n.ProductSeriesName,
+                    ProductSpaceCode = n.ProductSpaceCode,
+                    ProductSpaceName = n.ProductSpaceName,
+                    UpdatedAt = n.UpdatedAt
+                },
+                  new PagingParameters(searchModel.pageNumber, searchModel.pageSize),
+                  predicate, i => i.OrderByDescending(p => p.UpdatedAt)
+                  );
+
+
+              
                 var data = _mapper.Map<List<ListProductResponseModel>>(dbList.Data);
                 data.ForEach(i =>
                 {

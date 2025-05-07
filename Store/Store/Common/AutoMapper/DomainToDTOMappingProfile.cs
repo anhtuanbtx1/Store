@@ -20,6 +20,7 @@ namespace Store.Common.AutoMapper
             CreateMap<ProductResponseModel, Product>();
             CreateMap<Product, ProductResponseModel>();
             CreateMap<Product, ListProductResponseModel>();
+            CreateMap<ProductRequestModel, Product>();
 
 
             CreateMap<Banner, BannerResponseModel>();

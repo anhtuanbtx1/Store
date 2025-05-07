@@ -51,7 +51,16 @@ namespace Store.DAL.Services.WebServices
             try
             {
                 var predicate = PredicateBuilder.New<News>(i => i.State == true);
-                var tennantDbList = await _newRepository.ReadOnlyRespository.GetWithPagingAsync(
+                var tennantDbList = await _newRepository.ReadOnlyRespository.GetWithPagingAsync(n=> new News
+                {
+                    CreatedAt = n.CreatedAt,
+                    NewsId = n.NewsId,
+                    NewsTitle = n.NewsTitle,
+                    NewsShortContent = n.NewsShortContent,
+                    NewsThumbnail = n.NewsThumbnail,
+                    State = n.State,
+                    UpdatedAt = n.UpdatedAt
+                },
                    new PagingParameters(1, 100),
                    predicate
                    );

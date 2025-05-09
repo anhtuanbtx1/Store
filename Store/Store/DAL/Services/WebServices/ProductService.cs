@@ -261,10 +261,9 @@ namespace Store.DAL.Services.WebServices
                     var onlyInList1 = imagePaths.Except(paths).ToList();
                     if(onlyInList1.Count > 0)
                     {
-                        foreach (var item in onlyInList1)
-                        {
-                            _=DeleteImage(item);
-                        }
+                      
+                            _=DeleteImage(onlyInList1);
+                        
                     }
 
                     if (postData.uploadFiles.Count > 0)
@@ -294,22 +293,23 @@ namespace Store.DAL.Services.WebServices
                 ack.AddMessage("Không tìm thấy sản phẩm");
                 return ack;
             }
-            DeleteImage(existItem.ProductImage);
+            //DeleteImage(existItem.ProductImage);
             await _productRepository.Repository.DeleteAsync(productId);
+            ack.IsSuccess = true;
             return ack;
         }
 
-        public async Task<HTTPResponseModel> DeleteImage(string productImage)
+        public async Task<HTTPResponseModel> DeleteImage(List<string> productImage)
         {
             try
             {
-                List<string> listImage = JsonSerializer.Deserialize<List<string>>(productImage);
-                if (listImage.Count < 0)
+              
+                if (productImage.Count < 0)
                 {
                     _logger.LogError("Image not found");
                     return HTTPResponseModel.Make(REPONSE_ENUM.RS_NOT_FOUND, "Image does not exist !");
                 }
-                foreach (var image in listImage)
+                foreach (var image in productImage)
                 {
                     // Xóa tệp hình ảnh từ thư mục
                     var webRootPath = _webHostEnvironment.WebRootPath;
@@ -357,9 +357,9 @@ namespace Store.DAL.Services.WebServices
 
                     foreach (var file in model)
                     {
-                        string extension = Utils.GetFileExtensionFromBase64(file.Type); 
+                        string extension = Utils.GetFileExtensionFromBase64(file.Type);
                         //var fileName = $"{now.Ticks}{Path.GetExtension(file.FileName)}";
-                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + file.Type;
+                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + ".webp"; //file.Type;
                         var filePath = Path.Combine(folderPath, fileName);
 
                         // Lưu file vào thư mục

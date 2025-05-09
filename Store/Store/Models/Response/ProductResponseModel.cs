@@ -45,6 +45,12 @@ namespace Store.Models.Respone
         public List<string> ListImage { get; set; }
         public string? ProductPrice { get; set; }
         public string? ProductPriceSale { get; set; }
-
+        public string? ProductSpaceCode { get; set; }
+        public string? ProductSpaceName { get; set; }
+        public string? ProductSeriesCode { get; set; }
+        public string? ProductSeriesName { get; set; }
+        public string? ProductColorCode { get; set; }
+        public string? ProductColorName { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

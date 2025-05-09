@@ -62,7 +62,7 @@ namespace Store.DAL.Services.WebServices
                     UpdatedAt = n.UpdatedAt
                 },
                    new PagingParameters(1, 100),
-                   predicate
+                   predicate, i => i.OrderByDescending(p => p.UpdatedAt)
                    );
                 var data = _mapper.Map<List<NewsResponseModel>>(tennantDbList.Data);
                 data.ForEach(i =>
@@ -219,7 +219,7 @@ namespace Store.DAL.Services.WebServices
                     {
                         string extension = Utils.GetFileExtensionFromBase64(file.Type);
                         //var fileName = $"{now.Ticks}{Path.GetExtension(file.FileName)}";
-                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + file.Type;
+                        string fileName = $"{Helper.GenerateUUID()}{Path.GetExtension(file.Image.FileName)}" + ".webp";
                         var filePath = Path.Combine(folderPath, fileName);
 
                         // Lưu file vào thư mục
